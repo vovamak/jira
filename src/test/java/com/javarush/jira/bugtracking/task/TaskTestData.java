@@ -9,6 +9,7 @@ import com.javarush.jira.bugtracking.task.to.TaskToFull;
 import com.javarush.jira.common.to.CodeTo;
 
 import java.util.List;
+import java.util.Set;
 
 import static com.javarush.jira.bugtracking.ObjectType.TASK;
 import static com.javarush.jira.login.internal.web.UserTestData.ADMIN_ID;
@@ -59,6 +60,11 @@ public class TaskTestData {
     public static final UserBelong userTask2Assignment1 = new UserBelong(2L, TASK, USER_ID, "task_developer");
     public static final UserBelong userTask2Assignment2 = new UserBelong(2L, TASK, USER_ID, "task_tester");
 
+    public static final String TAG_1 = "urgent";
+    public static final String TAG_2 = "important";
+    public static final Set<String> TASK_TAGS = Set.of(TAG_1, TAG_2);
+
+
     static {
         taskToFull1.setActivityTos(activityTosForTask1);
         taskToFull2.setActivityTos(activityTosForTask2);
@@ -79,4 +85,9 @@ public class TaskTestData {
     public static ActivityTo getUpdatedActivityTo() {
         return new ActivityTo(ACTIVITY1_ID, TASK1_ID, USER_ID, null, null, "in_progress", "low", "epic", null, null, 3, null);
     }
+    public static Task  getNewTask() {
+        return new Task(null, "New task", "task", "todo", null, PROJECT1_ID, SPRINT1_ID);
+    }
+
 }
+

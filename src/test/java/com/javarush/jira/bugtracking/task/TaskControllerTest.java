@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import java.util.HashSet;
 
 import static com.javarush.jira.bugtracking.ObjectType.TASK;
 import static com.javarush.jira.bugtracking.task.TaskController.REST_URL;
@@ -20,7 +21,7 @@ import static com.javarush.jira.bugtracking.task.TaskTestData.NOT_FOUND;
 import static com.javarush.jira.bugtracking.task.TaskTestData.*;
 import static com.javarush.jira.common.util.JsonUtil.writeValue;
 import static com.javarush.jira.login.internal.web.UserTestData.*;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -38,6 +39,8 @@ class TaskControllerTest extends AbstractControllerTest {
     private static final String STATUS_CODE = "statusCode";
     private static final String USER_TYPE = "userType";
     private static final String ENABLED = "enabled";
+
+    private static final String TAGS_URL = REST_URL + "/{id}/tags";
 
     @Autowired
     private TaskRepository taskRepository;
@@ -590,4 +593,20 @@ class TaskControllerTest extends AbstractControllerTest {
                 .andExpect(jsonPath("$.detail", is(String
                         .format("Not found assignment with userType=%s for task {%d} for user {%d}", TASK_DEVELOPER, TASK1_ID, ADMIN_ID))));
     }
+    @Test
+    @WithUserDetails(value = USER_MAIL)
+    void getTags() throws Exception {
+        Task task =  getNewTask();
+        task.setTags(new HashSet<>(TASK_TAGS));
+        Task savedTask = taskRepository.save(task);
+
+        perform(MockMvcRequestBuilders.get(TAGS_URL, savedTask.getId()))
+                .andExpect(status().isOk())
+                .andDo(print())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$", hasItem(TAG_1)))
+                .andExpect(jsonPath("$", hasItem(TAG_2)));
+    }
+
 }
