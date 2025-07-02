@@ -27,4 +27,6 @@
 - https://habr.com/ru/articles/259055/
 
 Список выполненных задач:
-5.Написать тесты для всех публичных методов контроллера ProfileRestController
+5. Написать тесты для всех публичных методов контроллера ProfileRestController
+6. Добавить новый функционал: добавления тегов к задаче (REST API + реализация на сервисе).
+-TaskController, -TaskRepository,TaskService, TaskControllerTest

@@ -26,9 +26,9 @@ spring:
         # https://stackoverflow.com/questions/21257819/what-is-the-difference-between-hibernate-jdbc-fetch-size-and-hibernate-jdbc-batc
         jdbc.batch_size: 20
   datasource:
-    url: jdbc:postgresql://localhost:5432/jira
-    username: jira
-    password: JiraRush
+    url: jdbc:postgresql://172.16.99.120:5432/jira
+    username: postgres
+    password: Orenburg2016
 
   liquibase:
     changeLog: "classpath:db/changelog.sql"
