@@ -3,9 +3,6 @@ spring:
   init:
     mode: always
   datasource:
-    url: jdbc:postgresql://172.16.99.120:5432/jira-test
-    username: postgres
-    password: Orenburg2016
-#    url: jdbc:postgresql://localhost:5433/jira-test
-#    username: jira
-#    password: JiraRush
+    url: jdbc:postgresql://localhost:5433/jira-test
+    username: jira
+    password: JiraRush
