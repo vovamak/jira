@@ -30,3 +30,6 @@
 5. Написать тесты для всех публичных методов контроллера ProfileRestController
 6. Добавить новый функционал: добавления тегов к задаче (REST API + реализация на сервисе).
 -TaskController, -TaskRepository,TaskService, TaskControllerTest
+7. Добавить подсчет времени.  Написать 2 метода на уровне сервиса
+   -calculateWorkTime Сколько задача находилась в работе (ready_for_review минус in_progress )
+   -calculateTotalTimeReviewToDone Сколько задача находилась на тестировании (done минус ready_for_review).
