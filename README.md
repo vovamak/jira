@@ -30,21 +30,23 @@
 
 5. Написать тесты для всех публичных методов контроллера ProfileRestController.
 
+6. Сделать рефакторинг метода com.javarush.jira.bugtracking.attachment.FileUtil#upload
 
-6. Добавить новый функционал: добавления тегов к задаче (REST API + реализация на сервисе),
+
+7. Добавить новый функционал: добавления тегов к задаче (REST API + реализация на сервисе),
 
 в следующих классах:
 -TaskController, -TaskRepository,TaskService, 
 один тест написал в-TaskControllerTest. запросы тестил в Swagger
 
-7. Добавить подсчет времени.  Написать 2 метода на уровне сервиса
+8. Добавить подсчет времени.  Написать 2 метода на уровне сервиса
 
    -метод calculateWorkTime Сколько задача находилась в работе (ready_for_review минус in_progress )
 
    -метод calculateTotalTimeReviewToDone Сколько задача находилась на тестировании (done минус ready_for_review).
 
 
-8. Написать Dockerfile для основного сервера.
+9. Написать Dockerfile для основного сервера.
 
 запуск с в --network jira-network
 
