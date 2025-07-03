@@ -1,9 +1,7 @@
 
 services:
-
   jirarush:
     build: .
-#
     depends_on:
       - postgres-db
     environment:
@@ -31,9 +29,9 @@ services:
       POSTGRES_DB: jira
       POSTGRES_USER: jira
       POSTGRES_PASSWORD: JiraRush
-      PGDATA: /var/lib/postgresql/data/pgdata  # Соответствует вашей предыдущей настройке
+      PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
-      - db_data:/var/lib/postgresql/data  # Используем ту же папку для volume
+      - db_data:/var/lib/postgresql/data
     restart: unless-stopped
 volumes:
   db_data:
