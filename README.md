@@ -63,3 +63,7 @@ docker stop jira-app-container; docker rm jira-app-container
 docker build -t jira-app .
 
 docker run -d --name jira-app-container --network jira-network -p 8080:8080 jira-app
+
+10. Написать docker-compose файл для запуска контейнера сервера вместе с БД и nginx.
+
+для запуска http://localhost:80
