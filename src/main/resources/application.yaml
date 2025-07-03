@@ -46,6 +46,10 @@ spring:
     cache-names: users
     caffeine.spec: maximumSize=10000,expireAfterAccess=5m
 
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+
   security:
     oauth2:
       client:

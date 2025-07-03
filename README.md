@@ -67,3 +67,5 @@ docker run -d --name jira-app-container --network jira-network -p 8080:8080 jira
 10. Написать docker-compose файл для запуска контейнера сервера вместе с БД и nginx.
 
 для запуска http://localhost:80
+
+11. Добавить локализацию минимум на двух языках для шаблонов писем (mails) и стартовой страницы index.html.
