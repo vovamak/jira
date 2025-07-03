@@ -28,6 +28,8 @@
 
 Список выполненных задач:
 
+2. Удалить социальные сети: vk, yandex.
+
 5. Написать тесты для всех публичных методов контроллера ProfileRestController.
 
 6. Сделать рефакторинг метода com.javarush.jira.bugtracking.attachment.FileUtil#upload
