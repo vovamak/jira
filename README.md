@@ -50,7 +50,7 @@
 
 9. Написать Dockerfile для основного сервера.
 
-запуск с в --network jira-network
+запуск с --network jira-network
 
 команды:
 
