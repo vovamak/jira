@@ -11,10 +11,9 @@
         <div class="language-switcher mb-4">
             <a href="?lang=en" th:text="#{language.english}">English</a> |
             <a href="?lang=ru" th:text="#{language.russian}">Русский</a> |
-            <a href="?lang=fr" th:text="#{language.french}">Français</a>
         </div>
 
-        <!-- Локализованная кнопка выхода -->
+
         <div th:if="${authUser} != null">
             <form action="/ui/logout" method="post">
                 <button class="btn btn-primary btn-lg mt-3" type="submit" th:text="#{button.logout}">
